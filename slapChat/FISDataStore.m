@@ -61,7 +61,7 @@
 #pragma mark - Fetch/Save
 
 - (void)fetchData
-{
+{/*
     NSFetchRequest *messagesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
 
     NSSortDescriptor *createdAtSorter = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES];
@@ -70,6 +70,14 @@
     self.messages = [self.managedObjectContext executeFetchRequest:messagesRequest error:nil];
 
     if ([self.messages count]==0) {
+        [self generateTestData];
+    }
+  
+  */
+    
+    NSFetchRequest *recipientRequest = [NSFetchRequest fetchRequestWithEntityName:@"Recipient"];
+    self.recipients = [self.managedObjectContext executeFetchRequest:recipientRequest error:nil];
+    if (self.recipients.count == 0) {
         [self generateTestData];
     }
 }
@@ -92,8 +100,9 @@
 
 - (void)generateTestData
 {
-    Message *messageOne = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+    //self.managedObjectContext = [FISDataStore sharedDataStore].managedObjectContext;
     
+    Message *messageOne = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
     messageOne.content = @"Message 1";
     messageOne.createdAt = [NSDate date];
     
@@ -105,6 +114,54 @@
     
     messageThree.content = @"Message 3";
     messageThree.createdAt = [NSDate date];
+    
+    Message *messageFour = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+    
+    messageFour.content = @"Message 4";
+    messageFour.createdAt = [NSDate date];
+    
+    Message *messageFive = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+    
+    messageFive.content = @"Message 5";
+    messageFive.createdAt = [NSDate date];
+    
+    
+    Recipient * recipient1 = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+    
+    NSLog(@"messageOne Added %@",recipient1.messages);
+    recipient1.name = @"Guang";
+    recipient1.twitterHandle = @"Whimisical Guang";
+    recipient1.email = @"bha.guang@gmail.com";
+    recipient1.phoneNumber = @71689234872;
+    
+    [recipient1 addMessagesObject:messageOne];
+    
+    
+    Recipient * recipient2 = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+    [recipient2 addMessagesObject:messageTwo];
+    [recipient2 addMessagesObject:messageThree];
+    NSLog(@"messageTwo Added %@",recipient2.messages);
+
+    
+    recipient2.name = @"Shane";
+    recipient2.twitterHandle = @"shiftShane";
+    recipient2.email = @"shiftShane@gmail.com";
+    recipient2.phoneNumber = @334343432;
+    
+    
+    Recipient * recipient3 = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+    [recipient3 addMessagesObject:messageFour];
+    [recipient3 addMessagesObject:messageFive];
+    
+    recipient3.name = @"ellie";
+    recipient3.twitterHandle = @"ellie is fantastic";
+    recipient3.email = @"ellie@gmail.com";
+    recipient3.phoneNumber = @98935145;
+    NSLog(@"messagethree Added ---%@",recipient3.messages);
+
+    
+    
+    
     
     [self saveContext];
     [self fetchData];

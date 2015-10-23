@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5BBECA2C1BD5659900FFFAE2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBECA2B1BD5659900FFFAE2 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		62F862B11BD98892000AC717 /* FISRecipientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F862B01BD98892000AC717 /* FISRecipientTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		62F862C11BD98937000AC717 /* Message+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F862BC1BD98937000AC717 /* Message+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		62F862C21BD98937000AC717 /* Recipient+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F862BE1BD98937000AC717 /* Recipient+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		62F862C31BD98937000AC717 /* Recipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F862C01BD98937000AC717 /* Recipient.m */; settings = {ASSET_TAGS = (); }; };
 		D879F339195E028000FC5285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F338195E028000FC5285 /* Foundation.framework */; };
 		D879F33B195E028000FC5285 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33A195E028000FC5285 /* CoreGraphics.framework */; };
 		D879F33D195E028000FC5285 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33C195E028000FC5285 /* UIKit.framework */; };
@@ -39,7 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5BBECA2B1BD5659900FFFAE2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		62F862AF1BD98892000AC717 /* FISRecipientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISRecipientTableViewController.h; sourceTree = "<group>"; };
+		62F862B01BD98892000AC717 /* FISRecipientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISRecipientTableViewController.m; sourceTree = "<group>"; };
+		62F862BB1BD98937000AC717 /* Message+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Message+CoreDataProperties.h"; sourceTree = "<group>"; };
+		62F862BC1BD98937000AC717 /* Message+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Message+CoreDataProperties.m"; sourceTree = "<group>"; };
+		62F862BD1BD98937000AC717 /* Recipient+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recipient+CoreDataProperties.h"; sourceTree = "<group>"; };
+		62F862BE1BD98937000AC717 /* Recipient+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recipient+CoreDataProperties.m"; sourceTree = "<group>"; };
+		62F862BF1BD98937000AC717 /* Recipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipient.h; sourceTree = "<group>"; };
+		62F862C01BD98937000AC717 /* Recipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipient.m; sourceTree = "<group>"; };
 		D879F335195E028000FC5285 /* slapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D879F338195E028000FC5285 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D879F33A195E028000FC5285 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,7 +105,6 @@
 		D879F32C195E028000FC5285 = {
 			isa = PBXGroup;
 			children = (
-				5BBECA2B1BD5659900FFFAE2 /* Launch Screen.storyboard */,
 				D879F33E195E028000FC5285 /* slapChat */,
 				D879F35D195E028000FC5285 /* slapChatTests */,
 				D879F337195E028000FC5285 /* Frameworks */,
@@ -127,9 +136,15 @@
 		D879F33E195E028000FC5285 /* slapChat */ = {
 			isa = PBXGroup;
 			children = (
-				D879F373195E02C000FC5285 /* slapChat.xcdatamodeld */,
+				62F862BB1BD98937000AC717 /* Message+CoreDataProperties.h */,
+				62F862BC1BD98937000AC717 /* Message+CoreDataProperties.m */,
+				62F862BD1BD98937000AC717 /* Recipient+CoreDataProperties.h */,
+				62F862BE1BD98937000AC717 /* Recipient+CoreDataProperties.m */,
+				62F862BF1BD98937000AC717 /* Recipient.h */,
+				62F862C01BD98937000AC717 /* Recipient.m */,
 				D879F3A71961F1E800FC5285 /* Message.h */,
 				D879F3A81961F1E800FC5285 /* Message.m */,
+				D879F373195E02C000FC5285 /* slapChat.xcdatamodeld */,
 				D879F370195E02B400FC5285 /* FISDataStore.h */,
 				D879F371195E02B400FC5285 /* FISDataStore.m */,
 				D879F347195E028000FC5285 /* FISAppDelegate.h */,
@@ -137,6 +152,8 @@
 				D879F34A195E028000FC5285 /* Main.storyboard */,
 				D879F378195E032D00FC5285 /* FISTableViewController.h */,
 				D879F379195E032D00FC5285 /* FISTableViewController.m */,
+				62F862AF1BD98892000AC717 /* FISRecipientTableViewController.h */,
+				62F862B01BD98892000AC717 /* FISRecipientTableViewController.m */,
 				D879F350195E028000FC5285 /* Images.xcassets */,
 				D879F33F195E028000FC5285 /* Supporting Files */,
 			);
@@ -251,7 +268,6 @@
 			files = (
 				D879F351195E028000FC5285 /* Images.xcassets in Resources */,
 				D879F343195E028000FC5285 /* InfoPlist.strings in Resources */,
-				5BBECA2C1BD5659900FFFAE2 /* Launch Screen.storyboard in Resources */,
 				D879F34C195E028000FC5285 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,11 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D879F345195E028000FC5285 /* main.m in Sources */,
+				62F862C31BD98937000AC717 /* Recipient.m in Sources */,
 				D879F3A91961F1E800FC5285 /* Message.m in Sources */,
 				D879F375195E02C000FC5285 /* slapChat.xcdatamodeld in Sources */,
 				D879F372195E02B400FC5285 /* FISDataStore.m in Sources */,
 				D879F349195E028000FC5285 /* FISAppDelegate.m in Sources */,
+				62F862B11BD98892000AC717 /* FISRecipientTableViewController.m in Sources */,
 				D879F37A195E032D00FC5285 /* FISTableViewController.m in Sources */,
+				62F862C11BD98937000AC717 /* Message+CoreDataProperties.m in Sources */,
+				62F862C21BD98937000AC717 /* Recipient+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
